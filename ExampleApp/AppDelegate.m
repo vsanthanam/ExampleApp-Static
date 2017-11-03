@@ -6,20 +6,71 @@
 //  Copyright © 2017 Varun Santhanam. All rights reserved.
 //
 
+@import ExampleKit;
+
+#import <os/log.h>
+
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<EKSessionDelegate>
+
+@property (nonatomic, strong, readonly) EKSession *session;
 
 @end
 
 @implementation AppDelegate
 
+static os_log_t example_log;
+
+@synthesize session = _session;
+
+#pragma mark - Overridden Instance Methods
+
++ (void)initialize {
+    
+    example_log = os_log_create("com.varunsanthanam.ExampleApp", "ExampleLog");
+    
+}
+
+#pragma mark - Property Access Methods
+
+- (EKSession *)session {
+    
+    if (!_session) {
+        
+        _session = [[EKSession alloc] initWithDelegate:self];
+        
+    }
+    
+    return _session;
+    
+}
+
+#pragma mark - EKSessionDelegate
+
+- (void)session:(EKSession *)session didBeginProcessingObject:(EKObject *)object {
+    
+    os_log(example_log, "Began Processing Object");
+    
+}
+
+- (void)session:(EKSession *)session didFinishProcessingObject:(EKObject *)object withError:(NSError *)error {
+    
+    os_log(example_log, "Finished Processing Object");
+    
+}
+
+#pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    EKObject *object = [[EKObject alloc] initWithObjectName:@"ExampleApp"];
+    [self.session processObject:object];
+    
     return YES;
+    
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

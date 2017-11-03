@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07646BAE1FACD12100F772B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07646BAD1FACD12100F772B6 /* UIKit.framework */; };
 		07DB46751FA7E82900388362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB46741FA7E82900388362 /* AppDelegate.m */; };
 		07DB46781FA7E82900388362 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB46771FA7E82900388362 /* ViewController.m */; };
 		07DB467B1FA7E82900388362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DB46791FA7E82900388362 /* Main.storyboard */; };
 		07DB467D1FA7E82900388362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DB467C1FA7E82900388362 /* Assets.xcassets */; };
 		07DB46801FA7E82900388362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DB467E1FA7E82900388362 /* LaunchScreen.storyboard */; };
 		07DB46831FA7E82900388362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB46821FA7E82900388362 /* main.m */; };
+		07DB468B1FA7E85900388362 /* ExampleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB468A1FA7E85900388362 /* ExampleKit.framework */; };
+		07DB46901FA9071B00388362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DB468F1FA9071B00388362 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07646BAD1FACD12100F772B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07DB46701FA7E82900388362 /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DB46731FA7E82900388362 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07DB46741FA7E82900388362 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		07DB467F1FA7E82900388362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07DB46811FA7E82900388362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DB46821FA7E82900388362 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07DB468A1FA7E85900388362 /* ExampleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExampleKit.framework; path = ExampleApp/Frameworks/ExampleKit.framework; sourceTree = "<group>"; };
+		07DB468F1FA9071B00388362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07646BAE1FACD12100F772B6 /* UIKit.framework in Frameworks */,
+				07DB46901FA9071B00388362 /* Foundation.framework in Frameworks */,
+				07DB468B1FA7E85900388362 /* ExampleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 			children = (
 				07DB46721FA7E82900388362 /* ExampleApp */,
 				07DB46711FA7E82900388362 /* Products */,
+				07DB46891FA7E85900388362 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +79,16 @@
 				07DB46821FA7E82900388362 /* main.m */,
 			);
 			path = ExampleApp;
+			sourceTree = "<group>";
+		};
+		07DB46891FA7E85900388362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07DB468A1FA7E85900388362 /* ExampleKit.framework */,
+				07646BAD1FACD12100F772B6 /* UIKit.framework */,
+				07DB468F1FA9071B00388362 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +300,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y88YPD4RJA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ExampleApp/Frameworks",
+				);
 				INFOPLIST_FILE = ExampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.ExampleApp;
@@ -294,6 +318,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y88YPD4RJA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ExampleApp/Frameworks",
+				);
 				INFOPLIST_FILE = ExampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.ExampleApp;
